@@ -1,0 +1,14 @@
+def player(prev_play, opponent_history=[]):
+    if prev_play:
+        opponent_history.append(prev_play)
+    
+    if opponent_history:
+        # Count the frequency of each move
+        most_common = max(set(opponent_history), key=opponent_history.count)
+        # Choose a move to beat the most common move
+        counters = {"R": "P", "P": "S", "S": "R"}
+        move = counters[most_common]
+    else:
+        move = "R"  # Default for the first round
+    
+    return move
