@@ -1,0 +1,9 @@
+def player(prev_play, opponent_history=[]):
+    if prev_play:
+        opponent_history.append(prev_play)
+    
+    # Identify a repeating pattern
+    pattern = ["R", "P", "P", "S", "S"]
+    move = pattern[len(opponent_history) % len(pattern)]  # Cycle through the pattern
+    
+    return move
